@@ -1,2 +1,2 @@
 # Zombie Fish-Sticks
-CS 260 
+CS 260 - Zombie Fish-Sticks
