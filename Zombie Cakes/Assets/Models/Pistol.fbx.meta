@@ -7,6 +7,36 @@ ModelImporter:
       74: -7417378356367162778
     second: Pistol Rig|Pistol Idle
   - first:
+      74: -5069425913000130849
+    second: Pistol Rig|Pistol Reload
+  - first:
+      74: 8947479865588776382
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Idle|Pistol Rig|Pistol Idle
+  - first:
+      74: 7927425817819836882
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Idle|Pistol Rig|Pistol Idle.001
+  - first:
+      74: 6792617763888836257
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Idle|Pistol Rig|Pistol Idle.002
+  - first:
+      74: -1383201351572333272
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Run|Pistol Rig|Pistol Run
+  - first:
+      74: -8835531718280233927
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Run|Pistol Rig|Pistol Run.001
+  - first:
+      74: 7931426182936543442
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Run|Pistol Rig|Pistol Run.002
+  - first:
+      74: -4211576224272952065
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Shoot|Pistol Rig|Pistol Shoot
+  - first:
+      74: 9028927684557781019
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Shoot|Pistol Rig|Pistol Shoot.001
+  - first:
+      74: -5219125624489679251
+    second: Pistol Rig|Pistol Rig|Pistol Rig|Pistol Shoot|Pistol Rig|Pistol Shoot.002
+  - first:
       74: -6406316719715591406
     second: Pistol Rig|Pistol Run
   - first:
@@ -39,11 +69,127 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Pistol Rig|Pistol Idle
+      takeName: Pistol Rig|Pistol Idle
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 9
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pistol Rig|Pistol Reload
+      takeName: Pistol Rig|Pistol Reload
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 41
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pistol Rig|Pistol Run
+      takeName: Pistol Rig|Pistol Run
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 32
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Pistol Rig|Pistol Shoot
+      takeName: Pistol Rig|Pistol Shoot
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.3
+    globalScale: 0.2
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -94,7 +240,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.3
+    globalScale: 0.2
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0
@@ -103,7 +249,7 @@ ModelImporter:
   autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 0
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
