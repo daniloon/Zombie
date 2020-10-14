@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
 
     //Sprinting
     private bool readyToSprint = true;
+    public bool isRunning = false;
 
     //Input
     float x, y;
@@ -192,7 +193,7 @@ public class PlayerMovement : MonoBehaviour
         if (grounded && readyToSprint)
         {
             readyToSprint = false;
-
+            isRunning = true;
             //Apply sprint to player
             maxSpeed = 20;
         }
@@ -202,6 +203,7 @@ public class PlayerMovement : MonoBehaviour
     {
         maxSpeed = 10;
         readyToSprint = true;
+        isRunning = false;
     }
 
     private float desiredX;
