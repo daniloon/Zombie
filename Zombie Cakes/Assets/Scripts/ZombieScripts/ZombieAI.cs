@@ -54,7 +54,7 @@ public class ZombieAI : MonoBehaviour
     void Die()
     {
 
-        Instantiate(myCorpse, this.transform.position, this.transform.rotation);
+        //Instantiate(myCorpse, this.transform.position, this.transform.rotation);
         Destroy(gameObject);
 
     }

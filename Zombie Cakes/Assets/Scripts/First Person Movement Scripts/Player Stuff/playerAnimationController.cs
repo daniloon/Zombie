@@ -54,13 +54,14 @@ public class playerAnimationController : MonoBehaviour
                 // Debug.Log("Shooting Animation");
             }
             else
-
-
             if (playerMove.isRunning == false && playerAttack.shoot == false)
             {
                 rightHandAnimator.SetBool("isWalking", true);
                 rightHandAnimator.SetTrigger("isIdle");
 
+
+                leftHandAnimator.SetBool("isWalking", true);
+                leftHandAnimator.SetTrigger("isIdle");
                 // Debug.Log("Shooting Animation");
             }
 
@@ -68,11 +69,14 @@ public class playerAnimationController : MonoBehaviour
         else
         if (playerAttack.isReloading == true)
         {
+
+            leftHandAnimator.SetBool("isReloading", true);
+            leftHandAnimator.SetTrigger("Reload");
+
             rightHandAnimator.SetBool("isReloading", true);
             rightHandAnimator.SetTrigger("Reload");
 
-            leftHandAnimator.SetBool("isReloading", true);
-            leftHandAnimator.SetTrigger("isReloading");
+            
 
             // Debug.Log("Shooting Animation");
         }

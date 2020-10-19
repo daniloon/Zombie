@@ -87,9 +87,12 @@ public class playerAttack : MonoBehaviour
 
     IEnumerator Reload()
     {
+
         if (isReloading == true)
         {
             Debug.Log("Reloading!");
+
+            
 
             yield return new WaitForSeconds(pistol.GetWeaponReloadTime() + 0.75f);
 
@@ -120,6 +123,15 @@ public class playerAttack : MonoBehaviour
             }
 
         }
+        else
+        {
+            if (shoot != false)
+            {
+                shoot = false;
+                //Debug.Log("Shoot is False");
+            }
+
+        }
 
         // this is for reloading
         if (Input.GetButtonDown("Reload"))
@@ -130,11 +142,7 @@ public class playerAttack : MonoBehaviour
 
 
 
-        if (shoot != false)
-        {
-            shoot = false;
-            //Debug.Log("Shoot is False");
-        }
+
 
 
     }
