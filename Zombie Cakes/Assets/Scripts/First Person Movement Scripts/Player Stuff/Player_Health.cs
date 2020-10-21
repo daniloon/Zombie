@@ -2,20 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Player_Health : MonoBehaviour
 {
     int health = 100;
 
-    private void Update()
-    {
-        if (health <= 0)
-        {
-            
-            
-        }
-
-    }
+    [SerializeField] Text playerHealthCounter;
 
     void OnCollisionEnter(Collision collisioninfo)
     {
@@ -25,4 +18,23 @@ public class Player_Health : MonoBehaviour
             Debug.Log(health);
         }
     }
+
+
+
+    private void Update()
+    {
+
+        playerHealthCounter.text = "HP: " + health;
+
+        if (health <= 0)
+        {
+
+
+        }
+
+    }
+
+
+
+
 }
