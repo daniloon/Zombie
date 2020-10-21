@@ -1324,6 +1324,7 @@ GameObject:
   - component: {fileID: 1707028418}
   - component: {fileID: 1707028417}
   - component: {fileID: 1707028416}
+  - component: {fileID: 1707028419}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1399,10 +1400,22 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 3
+  m_Radius: 1.6429133
+  m_Height: 3.2858267
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 1.1429133}
+--- !u!114 &1707028419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1707028414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3ce5940d5c002c4286ac1dbfa8b387f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1772135399
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1562,22 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 0e849890913a34ce38b3d11428cffe80, type: 2}
+    - target: {fileID: 6421124037316987999, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421124037316987999, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
+      propertyPath: m_Radius
+      value: 1.2803683
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421124037316987999, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.7803683
+      objectReference: {fileID: 0}
+    - target: {fileID: 6421124037316987999, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
+      propertyPath: m_Height
+      value: 2.5607367
+      objectReference: {fileID: 0}
     - target: {fileID: 8082538324044106062, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -29.45
