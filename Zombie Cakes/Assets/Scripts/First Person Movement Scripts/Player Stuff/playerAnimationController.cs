@@ -6,9 +6,10 @@ using UnityEngine;
 public class playerAnimationController : MonoBehaviour
 {
 
-
-    public Animator rightHandAnimator;
-    public Animator leftHandAnimator;
+    public GameObject rightHand;
+    public GameObject leftHand;
+    Animator rightHandAnimator;
+    Animator leftHandAnimator;
     public playerAttack playerAttack;
     public PlayerMovement playerMove;
 
@@ -16,9 +17,9 @@ public class playerAnimationController : MonoBehaviour
     void Start()
     {
 
-        rightHandAnimator = GetComponent<Animator>();
+        rightHandAnimator = rightHand.GetComponent<Animator>();
 
-        leftHandAnimator = GetComponent<Animator>();
+        leftHandAnimator = leftHand.GetComponent<Animator>();
 
     }
 

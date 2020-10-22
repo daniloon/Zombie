@@ -92,8 +92,6 @@ public class playerAttack : MonoBehaviour
         {
             Debug.Log("Reloading!");
 
-            
-
             yield return new WaitForSeconds(pistol.GetWeaponReloadTime() + 0.75f);
 
             currentAmmo = pistol.GetWeaponAmmoCapacity();
