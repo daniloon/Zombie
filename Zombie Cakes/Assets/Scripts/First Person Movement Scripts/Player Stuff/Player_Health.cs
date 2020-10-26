@@ -12,7 +12,8 @@ public class Player_Health : MonoBehaviour
 
     void OnCollisionEnter(Collision collisioninfo)
     {
-       if(collisioninfo.collider.name == "Zombie")
+        
+       if(collisioninfo.collider.tag == "Zombie")
         {
             health = health - 50;
             Debug.Log(health);

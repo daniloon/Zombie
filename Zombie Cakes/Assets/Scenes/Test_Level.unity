@@ -114861,6 +114861,10 @@ PrefabInstance:
       propertyPath: m_Speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4778822321169393725, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
+      propertyPath: m_Height
+      value: 3.25
+      objectReference: {fileID: 0}
     - target: {fileID: 4778822321169393726, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
       propertyPath: myCorpse
       value: 
