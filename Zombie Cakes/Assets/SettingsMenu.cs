@@ -30,8 +30,8 @@ public class SettingsMenu : MonoBehaviour
             string option = reso[i].width + "x" + reso[i].height;
             options.Add(option);
 
-            if (reso[i].width == Screen.width &&
-                reso[i].height == Screen.height)
+            if (reso[i].width == Screen.currentResolution.width &&
+                reso[i].height == Screen.currentResolution.height)
             {
                 currentResolutionIndex = i;
             }
