@@ -10,8 +10,7 @@ public class MenuReturn : MonoBehaviour
     {
         GetComponent<Animation>();
         SceneManager.LoadScene(0);
-        
-    }
 
-    
+    }
 }
+

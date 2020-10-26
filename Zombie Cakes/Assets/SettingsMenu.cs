@@ -7,6 +7,7 @@ using UnityEngine.UI;
 using TMPro;
 
 using Debug = UnityEngine.Debug;
+using System.ComponentModel.Design;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -40,6 +41,12 @@ public class SettingsMenu : MonoBehaviour
         resolutionDropdown.AddOptions(options);
         resolutionDropdown.value = currentResolutionIndex;
         resolutionDropdown.RefreshShownValue();
+    }
+
+    public void SetResolution(int resolutionIndex)
+    {
+        Resolution resolution = reso[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
     }
 
 

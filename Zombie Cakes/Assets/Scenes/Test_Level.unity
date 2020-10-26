@@ -4491,7 +4491,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &100952593
 Transform:
   m_ObjectHideFlags: 0
@@ -24502,6 +24502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Phone
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 68ee3d17a75022e4ebc3881d12645841, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68ee3d17a75022e4ebc3881d12645841, type: 3}
       propertyPath: m_LocalPosition.x
       value: -91.022354
@@ -24532,7 +24536,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68ee3d17a75022e4ebc3881d12645841, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 68ee3d17a75022e4ebc3881d12645841, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -35168,6 +35172,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bridge_Damage
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 263dc3e774e34a54f8e1214aafc1a5a1, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 263dc3e774e34a54f8e1214aafc1a5a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: -183.38737
@@ -36019,7 +36027,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!108 &705507994
 Light:
   m_ObjectHideFlags: 0
@@ -42313,7 +42321,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &813011117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47467,7 +47475,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8082538324044106062, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8082538324044106062, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -47484,6 +47492,10 @@ PrefabInstance:
     - target: {fileID: 8890423856050803700, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
       propertyPath: m_Name
       value: Zombie
+      objectReference: {fileID: 0}
+    - target: {fileID: 8890423856050803700, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 13b80a1e6931c491a885dffad94e069f, type: 3}
@@ -88173,7 +88185,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1707028415
 Transform:
   m_ObjectHideFlags: 0
