@@ -85,31 +85,31 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftShift))
             StopSprint();
 
-        //Crouching
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-            StartCrouch();
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-            StopCrouch();
+        ////Crouching
+        //if (Input.GetKeyDown(KeyCode.LeftControl))
+        //    StartCrouch();
+        //if (Input.GetKeyUp(KeyCode.LeftControl))
+        //    StopCrouch();
     }
 
-    private void StartCrouch()
-    {
-        transform.localScale = crouchScale;
-        transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
-        if (rb.velocity.magnitude > 0.5f)
-        {
-            if (grounded)
-            {
-                rb.AddForce(orientation.transform.forward * slideForce);
-            }
-        }
-    }
+    //private void StartCrouch()
+    //{
+    //    transform.localScale = crouchScale;
+    //    transform.position = new Vector3(transform.position.x, transform.position.y - 0.5f, transform.position.z);
+    //    if (rb.velocity.magnitude > 0.5f)
+    //    {
+    //        if (grounded)
+    //        {
+    //            rb.AddForce(orientation.transform.forward * slideForce);
+    //        }
+    //    }
+    //}
 
-    private void StopCrouch()
-    {
-        transform.localScale = playerScale;
-        transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
-    }
+    //private void StopCrouch()
+    //{
+    //    transform.localScale = playerScale;
+    //    transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
+    //}
 
     private void Movement()
     {
