@@ -15,12 +15,14 @@ public class destroyCorpse : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("End Me"))
+        if (myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Destroy"))
         {
             Destroy(gameObject);
             Destroy(this);
+            Debug.Log("Corpse Destroyed Successfully");
         }
         else
+        if (!myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Corpse Animation") && !myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Destroy"))
         {
             Debug.Log("Error in deleting corpse!");
         }

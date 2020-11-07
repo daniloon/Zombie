@@ -6,15 +6,21 @@ using UnityEngine.UI;
 public class playerAttack : MonoBehaviour
 {
 
-
-
+    private Weapons currentGun;
+    public WeaponSwitching weaponHolder;
+    public Camera playerCam;
 
     public bool shoot = false;
     public bool isReloading = false;
-    public Camera playerCam;
-    Weapons pistol = new Weapons(100f, 6f, 10, 16, 1f);
-    int currentAmmo = 0;
+    public float impactForce = 15f;
     private float nextTimeToFire = 0;
+    float myWepRange;
+    float myFireRate;
+    float myReloadTime;
+    int myWepDamage;
+    int myMaxAmmo;
+    int myCurrentAmmo;
+    public bool weaponSize = false;
 
     [SerializeField] Text ammoCounter;
 
@@ -23,20 +29,45 @@ public class playerAttack : MonoBehaviour
     void Start()
     {
 
-        currentAmmo = pistol.GetWeaponAmmoCapacity();
+        currentGun = weaponHolder.GetComponent<WeaponSwitching>().currentWeapon;
+
+        UpdateWeapon();
 
     }
 
 
+    // this is to update the current weapon;
+    private void UpdateWeapon()
+    {
+        currentGun = weaponHolder.GetComponent<WeaponSwitching>().currentWeapon;
 
+        if (currentGun != null)
+        {
+            myWepRange = currentGun.wepRange;
+            myFireRate = currentGun.fireRate;
+            myReloadTime = currentGun.reloadTime;
+            myWepDamage = currentGun.wepDamage;
+            myMaxAmmo = currentGun.maxAmmoCapacity;
+            myCurrentAmmo = currentGun.currentAmmo;
+            weaponSize = currentGun.bigGun;
+        }
+        else
+        if (currentGun == null)
+        {
+            Debug.Log("No Weapon is Attached!");
+        }
+
+    }
 
     void Shoot()
     {
-        
-        currentAmmo--;
+
+        myCurrentAmmo--;
+        currentGun.currentAmmo = myCurrentAmmo;
+        shoot = true;
 
         RaycastHit thisHit;
-        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out thisHit, pistol.GetWeaponRange()))
+        if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out thisHit, myWepRange))
         {
 
             //Debug.Log(thisHit.transform.name);
@@ -64,7 +95,7 @@ public class playerAttack : MonoBehaviour
                 //else
                 if (thisHit.transform.tag != "Head Collider")
                 {
-                    myTarget.TakeDamage(pistol.GetWeaponDamage());
+                    myTarget.TakeDamage(myWepDamage);
                     myTarget.wasShot = true;
                     myTarget.canMove = false;
                     Debug.Log("Hit!");
@@ -90,11 +121,12 @@ public class playerAttack : MonoBehaviour
 
         if (isReloading == true)
         {
-            Debug.Log("Reloading!");
 
-            yield return new WaitForSeconds(pistol.GetWeaponReloadTime() + 0.75f);
+            yield return new WaitForSeconds(myReloadTime + 0.7f);
 
-            currentAmmo = pistol.GetWeaponAmmoCapacity();
+            currentGun.currentAmmo = currentGun.maxAmmoCapacity;
+            myCurrentAmmo = myMaxAmmo;
+
             isReloading = false;
         }
 
@@ -104,44 +136,53 @@ public class playerAttack : MonoBehaviour
     {
 
         // this is to display the current bullets in the UI
-        ammoCounter.text = currentAmmo.ToString() + " / " + pistol.GetWeaponAmmoCapacity().ToString();
 
+        if (currentGun != null)
+        {
+            ammoCounter.text = myCurrentAmmo.ToString() + " / " + currentGun.maxAmmoCapacity.ToString();
+        }
 
         // This is for shooting
         if (Input.GetButtonDown("Fire1"))
         {
 
-            if (currentAmmo > 0 && Time.time >= nextTimeToFire) {
-
-                nextTimeToFire = Time.time + 1f / pistol.GetWeaponFireRate();
-                shoot = true;
+            if (myCurrentAmmo > 0 && Time.time >= nextTimeToFire)
+            {
+                nextTimeToFire = Time.time + 1f / myFireRate;
                 //Debug.Log("Shoot is True");
                 Shoot();
-
             }
 
         }
         else
         {
-            if (shoot != false)
-            {
-                shoot = false;
-                //Debug.Log("Shoot is False");
-            }
-
+            shoot = false;
         }
 
         // this is for reloading
-        if (Input.GetButtonDown("Reload"))
+        if (Input.GetButtonDown("Reload") && myCurrentAmmo < myMaxAmmo)
         {
             isReloading = true;
             StartCoroutine(Reload());
         }
 
+        // this is to continuosly update the currently equipped weapon.
+        UpdateWeapon();
 
 
+        // This will be to switch weapons
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            weaponHolder.selectedWep = 0;
+            weaponHolder.SelectCurrentWeapon();
+        }
 
-
+        // This will be to switch weapons
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            weaponHolder.selectedWep = 1;
+            weaponHolder.SelectCurrentWeapon();
+        }
 
     }
 

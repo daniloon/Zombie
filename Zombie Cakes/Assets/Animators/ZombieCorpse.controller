@@ -22,7 +22,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: -1332357366302857109, guid: 196f565e2ee1c450085399fa56eebefe, type: 3}
-  m_Tag: 
+  m_Tag: Corpse Animation
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
@@ -48,7 +48,7 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 0}
-  m_Tag: End Me
+  m_Tag: Destroy
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
