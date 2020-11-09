@@ -15,8 +15,8 @@ public class Player_Health : MonoBehaviour
         
        if(collisioninfo.collider.tag == "Zombie")
         {
-            health = health - 50;
-            Debug.Log(health);
+            health = health - 10;
+            //uniDebug.Log(health);
         }
     }
 
