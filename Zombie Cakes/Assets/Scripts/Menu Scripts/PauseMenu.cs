@@ -11,11 +11,13 @@ public class PauseMenu : MonoBehaviour
     public UnityEvent onPause = new UnityEvent();
     public UnityEvent onResume = new UnityEvent();
     public GameObject pauseMenuUI;
+    public GameObject ControlPanel;
 
     //Action at start of Script
     void Start()
     {
         pauseMenuUI.SetActive(false);
+        ControlPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -54,6 +56,19 @@ public class PauseMenu : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         onPause.Invoke();
+    }
+
+    public void LoadControls()
+    {
+        ControlPanel.SetActive(true);
+        pauseMenuUI.SetActive(false);
+        Time.timeScale = 0f;
+    }
+
+    public void BackControls()
+    {
+        ControlPanel.SetActive(false);
+        Pause();
     }
 
     //Actions to go back to Main Menu
