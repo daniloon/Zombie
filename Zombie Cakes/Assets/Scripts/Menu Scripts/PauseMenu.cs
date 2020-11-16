@@ -11,6 +11,7 @@ public class PauseMenu : MonoBehaviour
     public UnityEvent onPause = new UnityEvent();
     public UnityEvent onResume = new UnityEvent();
     public GameObject pauseMenuUI;
+    public GameObject ControlsMenu;
 
     //Action at start of Script
     void Start()
@@ -39,6 +40,7 @@ public class PauseMenu : MonoBehaviour
     public void Resume()
     {
         pauseMenuUI.SetActive(false);
+        ControlsMenu.SetActive(false);
         Time.timeScale = 1f;
         GamePaused = false;
         Cursor.lockState = CursorLockMode.Locked;
@@ -56,6 +58,27 @@ public class PauseMenu : MonoBehaviour
         onPause.Invoke();
     }
 
+    //Gets into the main 
+    public void LoadControls()
+    {
+        if (ControlsMenu != null)
+        {
+            ControlsMenu.SetActive(true);
+            pauseMenuUI.SetActive(false);
+            Time.timeScale = 0f;
+        }
+    }
+
+    //Code for getting back to pause menu
+    public void PauseBack()
+    {
+        if (pauseMenuUI != null)
+        {
+            pauseMenuUI.SetActive(true);
+            ControlsMenu.SetActive(false);
+        }
+    }
+
     //Actions to go back to Main Menu
     public void LoadMenu()
     {
@@ -63,7 +86,7 @@ public class PauseMenu : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    //Code for Pause Menu's "Quit" Button
+    // Pause Menu's "Quit" Button
     public void QuitGame()
     {
         Debug.Log("Quit!");
