@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     //Assingables
     public Transform playerCam;
     public Transform orientation;
+    playerAttack myAttack;
 
     //Other
     private Rigidbody rb;
@@ -47,6 +48,9 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 normalVector = Vector3.up;
     private Vector3 wallNormalVector;
 
+    // Holding the Cake
+    public bool cakeHeld = false;
+
     void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -57,6 +61,8 @@ public class PlayerMovement : MonoBehaviour
         playerScale = transform.localScale;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        myAttack = GetComponentInChildren<playerAttack>();
     }
 
     private void FixedUpdate()
@@ -313,4 +319,20 @@ public class PlayerMovement : MonoBehaviour
     {
         grounded = false;
     }
+
+
+
+    // This should make it switch to the pistol when holding the cake
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.tag == "Cake")
+        {
+            myAttack.weaponSize = false;
+            cakeHeld = true;
+            Debug.Log("Pistol Out! Cake Held!");
+        }
+    }
+
+
+
 }

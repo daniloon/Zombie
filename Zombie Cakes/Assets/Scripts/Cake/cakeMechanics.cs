@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class cakeMechanics : MonoBehaviour
 {
+
+    Transform myCake;
+    public Transform cakeHolder;
+
     // this int is the cake health points. This is a different variable than playerHealth
     float cakeHealth = 100;
 
@@ -15,23 +18,39 @@ public class cakeMechanics : MonoBehaviour
     // this allows us to display the variable cakeHealth on UI
     //[SerializeField] Text cakeHealthCounter;
 
+    void Start()
+    {
+
+        myCake = this.transform;
+
+    }
+
+
+
     // this event is triggered whenever the cake collider collides with another collider
     void OnCollisionEnter(Collision collisioninfo)
     {
+
+        if (collisioninfo.collider.tag == "Player")
+        {
+            myCake.position = cakeHolder.position;
+            myCake.parent = cakeHolder;
+            cakeHolder.transform.localRotation = Quaternion.Euler(0, 50, 0);
+
+            ground = false;
+            Debug.Log("The Cake is Held!!");
+
+        }
+
         if (collisioninfo.collider.tag == "Zombie")
         {
             cakeHealth = cakeHealth - 10;
             Debug.Log(cakeHealth);
         }
 
-        /**
-        while (collisioninfo.collider.tag == "Ground")
-        {
-            cakeHealth = cakeHealth - 10;
-            Debug.Log(cakeHealth);
-        }
-        **/
+
     }
+
 
     // Update is called once per frame
     void Update()
@@ -50,7 +69,10 @@ public class cakeMechanics : MonoBehaviour
         {
             cakeHealth = cakeHealth - 1 * Time.deltaTime;
             Debug.Log(cakeHealth);
+
         }
-        
+
     }
+
 }
+

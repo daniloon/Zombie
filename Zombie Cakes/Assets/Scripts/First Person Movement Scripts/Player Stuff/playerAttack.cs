@@ -10,7 +10,10 @@ public class playerAttack : MonoBehaviour
     public WeaponSwitching weaponHolder;
     public Camera playerCam;
 
+    PlayerMovement myMovement;
+
     public bool shoot = false;
+    public bool canReload = true;
     public bool isReloading = false;
     public float impactForce = 15f;
     private float nextTimeToFire = 0;
@@ -28,6 +31,7 @@ public class playerAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        myMovement = GetComponentInParent<PlayerMovement>();
 
         currentGun = weaponHolder.GetComponent<WeaponSwitching>().currentWeapon;
 
@@ -160,7 +164,7 @@ public class playerAttack : MonoBehaviour
         }
 
         // this is for reloading
-        if (Input.GetButtonDown("Reload") && myCurrentAmmo < myMaxAmmo)
+        if (canReload == true && Input.GetButtonDown("Reload") && myCurrentAmmo < myMaxAmmo)
         {
             isReloading = true;
             StartCoroutine(Reload());
@@ -182,6 +186,19 @@ public class playerAttack : MonoBehaviour
         {
             weaponHolder.selectedWep = 1;
             weaponHolder.SelectCurrentWeapon();
+        }
+
+        if (myMovement.cakeHeld == true)
+        {
+
+            weaponHolder.selectedWep = 1;
+            weaponHolder.SelectCurrentWeapon();
+            canReload = false;
+
+        }
+        else
+        {
+            canReload = true;
         }
 
     }

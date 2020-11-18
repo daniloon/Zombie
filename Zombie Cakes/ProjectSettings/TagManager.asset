@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Zombie
   - Cake
+  - CakeHolder
   layers:
   - Default
   - TransparentFX
