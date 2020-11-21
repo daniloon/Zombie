@@ -42,7 +42,17 @@ ModelImporter:
   - first:
       74: 7183556805385958019
     second: Pistol Rig|Pistol Shoot
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: -4973734387028869240, guid: 87586789e25ea4d96ab299537ad91d33, type: 3}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: -4973734387028869240, guid: 87586789e25ea4d96ab299537ad91d33, type: 3}
   materials:
     materialImportMode: 1
     materialName: 0
@@ -54,8 +64,7 @@ ModelImporter:
     resampleCurves: 1
     optimizeGameObjects: 0
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'LeftLowerLeg' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -190,7 +199,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.2
+    globalScale: 0.22
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -241,42 +250,42 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Handle
       parentName: Pistol(Clone)
-      position: {x: 0.3346444, y: -0.056575026, z: 0.37846133}
+      position: {x: 0.36810887, y: -0.062232535, z: 0.4163075}
       rotation: {x: 0.0025080012, y: 0.99485713, z: 0.101256885, w: -0.00028360038}
       scale: {x: 0.99999994, y: 0.9999997, z: 1}
     - name: Pistol
       parentName: Handle
-      position: {x: 0.3348813, y: -0.01429379, z: 0.37689534}
+      position: {x: 0.36836943, y: -0.015723169, z: 0.41458488}
       rotation: {x: 0.0019445383, y: 0.9938925, z: 0.11033539, w: 0.00025132863}
       scale: {x: 0.9999999, y: 1.0000002, z: 1.0000005}
     - name: Barrel Top
       parentName: Handle
-      position: {x: 0.0009120786, y: 0.27280533, z: 0.07296971}
+      position: {x: 0.0010032866, y: 0.30008587, z: 0.080266684}
       rotation: {x: -0.12308175, y: 0.0019781934, z: -0.0018883605, w: 0.9923928}
       scale: {x: 1, y: 1, z: 1}
     - name: Pistol-Top
       parentName: Barrel Top
-      position: {x: 0.33360073, y: -0.376369, z: -0.18595909}
+      position: {x: 0.36696088, y: -0.4140059, z: -0.20455503}
       rotation: {x: 0.0013791157, y: 0.7320564, z: 0.6812412, w: 0.0013937325}
       scale: {x: 0.99999976, y: 1.0000001, z: 1.0000005}
     - name: Barrel Top_end
       parentName: Barrel Top
-      position: {x: -0, y: 0.4320913, z: 0}
+      position: {x: -0, y: 0.47530046, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Mag
       parentName: Handle
-      position: {x: 5.5879357e-10, y: -0.00000009872019, z: 0.00000003441819}
+      position: {x: 6.146729e-10, y: -0.000000108592225, z: 0.00000003786001}
       rotation: {x: 0.9987911, y: 0.033141952, z: 0.0061232606, w: -0.03578345}
       scale: {x: 1.0000032, y: 1.0000001, z: 1.0000037}
     - name: Current Mag
       parentName: Mag
-      position: {x: 0.3378544, y: 0.017516702, z: -0.37942672}
+      position: {x: 0.3716398, y: 0.019268373, z: -0.4173694}
       rotation: {x: -0.002381783, y: -0.06555686, z: 0.99719507, w: -0.03603603}
       scale: {x: 0.9999969, y: 0.9999998, z: 0.99999636}
     - name: Mag_end
       parentName: Mag
-      position: {x: -0, y: 0.090440705, z: 0}
+      position: {x: -0, y: 0.09948479, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
@@ -286,7 +295,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.2
+    globalScale: 0.22
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

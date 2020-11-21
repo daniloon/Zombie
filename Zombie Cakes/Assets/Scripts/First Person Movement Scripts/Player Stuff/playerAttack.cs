@@ -68,8 +68,7 @@ public class playerAttack : MonoBehaviour
 
         myCurrentAmmo--;
         currentGun.currentAmmo = myCurrentAmmo;
-        shoot = true;
-
+        
         RaycastHit thisHit;
         if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out thisHit, myWepRange))
         {
@@ -147,14 +146,15 @@ public class playerAttack : MonoBehaviour
         }
 
         // This is for shooting
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
         {
 
-            if (myCurrentAmmo > 0 && Time.time >= nextTimeToFire)
+            if (myCurrentAmmo > 0)
             {
                 nextTimeToFire = Time.time + 1f / myFireRate;
                 //Debug.Log("Shoot is True");
                 Shoot();
+                shoot = true;
             }
 
         }
@@ -188,10 +188,26 @@ public class playerAttack : MonoBehaviour
             weaponHolder.SelectCurrentWeapon();
         }
 
+        // This will be to switch weapons
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            weaponHolder.selectedWep = 2;
+            weaponHolder.SelectCurrentWeapon();
+        }
+
+
+        // This will be to switch weapons
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            weaponHolder.selectedWep = 3;
+            weaponHolder.SelectCurrentWeapon();
+        }
+
+
         if (myMovement.cakeHeld == true)
         {
 
-            weaponHolder.selectedWep = 1;
+            weaponHolder.selectedWep = 3;
             weaponHolder.SelectCurrentWeapon();
             canReload = false;
 
