@@ -8,9 +8,12 @@ public class cakeMechanics : MonoBehaviour
 
     Transform myCake;
     public Transform cakeHolder;
+    public CakeHealthBar cakeHealthBar;
 
     // this int is the cake health points. This is a different variable than playerHealth
-    float cakeHealth = 100;
+    float maxCakeHealth = 100;
+    //Cake's current health points
+    float currentCakeHealth;
 
     // this boolean will help us keep track of weather the cake is on the ground or not/
     bool ground = true;
@@ -20,12 +23,11 @@ public class cakeMechanics : MonoBehaviour
 
     void Start()
     {
-
+        currentCakeHealth = maxCakeHealth;
+        cakeHealthBar.SetMaxCakeHealth(maxCakeHealth);
         myCake = this.transform;
 
     }
-
-
 
     // this event is triggered whenever the cake collider collides with another collider
     void OnCollisionEnter(Collision collisioninfo)
@@ -44,22 +46,33 @@ public class cakeMechanics : MonoBehaviour
 
         if (collisioninfo.collider.tag == "Zombie")
         {
-            cakeHealth = cakeHealth - 10;
-            Debug.Log(cakeHealth);
+            TakeDamage(10);
         }
 
 
     }
 
+    void TakeDamage(float damage)
+    {
+        currentCakeHealth -= damage;
+        cakeHealthBar.SetCakeHealth(currentCakeHealth);
+    }
+
+    void GroundDamage(float damage)
+    {
+        currentCakeHealth = currentCakeHealth - damage * Time.deltaTime;
+        cakeHealthBar.SetCakeHealth(currentCakeHealth);
+    }
+
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // this changes the variable playerHealthCounter with the updated cake health every frame
         //cakeHealthCounter.text = "Cake Hp: " + health;
 
         // this method will trigger game over when cake health drops to 0
-        if (cakeHealth <= 0)
+        if (currentCakeHealth <= 0)
         {
             SceneManager.LoadScene(2);
         }
@@ -67,8 +80,8 @@ public class cakeMechanics : MonoBehaviour
         // when the cake is on the ground it will slowly lose health
         if (ground)
         {
-            cakeHealth = cakeHealth - 1 * Time.deltaTime;
-            Debug.Log(cakeHealth);
+            GroundDamage(1);
+            Debug.Log(cakeHealthBar);
 
         }
 
