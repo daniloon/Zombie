@@ -8,6 +8,7 @@ TagManager:
   - Cake
   - CakeHolder
   - AmmoBox
+  - DropOffZone
   layers:
   - Default
   - TransparentFX

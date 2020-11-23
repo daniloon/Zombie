@@ -211,8 +211,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wepRange: 100
   fireRate: 8
-  wepDamage: 5
+  wepDamage: 10
   maxAmmoCapacity: 16
+  currentMaxAmmo: 0
   currentAmmo: 16
   reloadTime: 1
   bigGun: 0

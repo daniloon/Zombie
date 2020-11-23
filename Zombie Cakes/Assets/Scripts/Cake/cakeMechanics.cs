@@ -10,6 +10,7 @@ public class cakeMechanics : MonoBehaviour
     public Transform cakeHolder;
     public CakeHealthBar cakeHealthBar;
     public playerAttack playerAtt;
+    public PlayerMovement playerMove;
 
     // this is the rigidbody that gives the cake physics
     public Rigidbody rb;
@@ -43,7 +44,7 @@ public class cakeMechanics : MonoBehaviour
             myCake.position = cakeHolder.position;
             myCake.parent = cakeHolder;
 
-            // this code helps to set the position of the cake on the player hand after pick-up
+            // this code sets the rotation of the cake on the player hand after pick-up
             myCake.transform.localRotation = Quaternion.Euler(0, 0, 0);
             cakeHolder.transform.localRotation = Quaternion.Euler(0, 0, 105);
             
@@ -61,9 +62,13 @@ public class cakeMechanics : MonoBehaviour
         {
             TakeDamage(10);
         }
+
+
+
     }
 
-    void TakeDamage(float damage)
+
+    public void TakeDamage(float damage)
     {
         currentCakeHealth -= damage;
         cakeHealthBar.SetCakeHealth(currentCakeHealth);
@@ -113,7 +118,7 @@ public class cakeMechanics : MonoBehaviour
         {
             // this code will allow for the cake to be dropped by the player
             myCake.parent = null;
-
+            playerMove.cakeHeld = false;
             // change cake ground status after dropping it
             ground = true;
 

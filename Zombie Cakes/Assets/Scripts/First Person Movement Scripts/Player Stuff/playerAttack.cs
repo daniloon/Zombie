@@ -235,8 +235,7 @@ public class playerAttack : MonoBehaviour
                 weaponHolder.selectedWep = 3;
                 weaponHolder.SelectCurrentWeapon();
             }
-
-
+            else
             if (myMovement.cakeHeld == true)
             {
 
