@@ -42,8 +42,6 @@ public class cakeMechanics : MonoBehaviour
             myCake.transform.localRotation = Quaternion.Euler(0, 0, 0);
             cakeHolder.transform.localRotation = Quaternion.Euler(0, 0, 105);
             
-
-
             ground = false;
             Debug.Log("The Cake is Held!!");
 
