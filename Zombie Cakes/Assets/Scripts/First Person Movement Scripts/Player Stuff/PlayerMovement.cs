@@ -331,6 +331,14 @@ public class PlayerMovement : MonoBehaviour
             cakeHeld = true;
             Debug.Log("Pistol Out! Cake Held!");
         }
+
+        if(collision.collider.tag == "AmmoBox" && myAttack.myCurrentMaxAmmo < myAttack.currentGun.maxAmmoCapacity)
+        {
+            myAttack.currentGun.currentMaxAmmo = myAttack.currentGun.maxAmmoCapacity;
+            myAttack.currentGun.currentAmmo = myAttack.currentGun.maxAmmoCapacity;
+        }
+
+
     }
 
 

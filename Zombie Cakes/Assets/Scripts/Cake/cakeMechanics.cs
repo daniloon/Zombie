@@ -9,6 +9,7 @@ public class cakeMechanics : MonoBehaviour
     Transform myCake;
     public Transform cakeHolder;
     public CakeHealthBar cakeHealthBar;
+    public playerAttack playerAtt;
 
     // this int is the cake health points. This is a different variable than playerHealth
     float maxCakeHealth = 100;
@@ -37,7 +38,11 @@ public class cakeMechanics : MonoBehaviour
         {
             myCake.position = cakeHolder.position;
             myCake.parent = cakeHolder;
-            cakeHolder.transform.localRotation = Quaternion.Euler(0, 50, 0);
+
+            myCake.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            cakeHolder.transform.localRotation = Quaternion.Euler(0, 0, 105);
+            
+
 
             ground = false;
             Debug.Log("The Cake is Held!!");
@@ -81,7 +86,7 @@ public class cakeMechanics : MonoBehaviour
         if (ground)
         {
             GroundDamage(1);
-            Debug.Log(cakeHealthBar);
+            //Debug.Log(cakeHealthBar);
 
         }
 

@@ -9,10 +9,16 @@ public class Weapons : MonoBehaviour
     public float fireRate = 15f;
     public int wepDamage = 10;
     public int maxAmmoCapacity = 0;
+    public int currentMaxAmmo = 0;
     public int currentAmmo = 0;
     public float reloadTime = 1f;
     public bool bigGun = false;
 
+
+    private void Start()
+    {
+        currentMaxAmmo = maxAmmoCapacity;
+    }
 
     public float GetWeaponRange()
     {

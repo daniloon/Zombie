@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class playerAttack : MonoBehaviour
 {
 
-    private Weapons currentGun;
+    public Weapons currentGun;
     public WeaponSwitching weaponHolder;
     public Camera playerCam;
 
@@ -22,6 +22,7 @@ public class playerAttack : MonoBehaviour
     float myReloadTime;
     int myWepDamage;
     int myMaxAmmo;
+    public int myCurrentMaxAmmo;
     int myCurrentAmmo;
     public bool weaponSize = false;
 
@@ -34,7 +35,7 @@ public class playerAttack : MonoBehaviour
         myMovement = GetComponentInParent<PlayerMovement>();
 
         currentGun = weaponHolder.GetComponent<WeaponSwitching>().currentWeapon;
-
+        myCurrentAmmo = currentGun.currentAmmo;
         UpdateWeapon();
 
     }
@@ -52,8 +53,12 @@ public class playerAttack : MonoBehaviour
             myReloadTime = currentGun.reloadTime;
             myWepDamage = currentGun.wepDamage;
             myMaxAmmo = currentGun.maxAmmoCapacity;
+            myCurrentMaxAmmo = currentGun.currentMaxAmmo;
             myCurrentAmmo = currentGun.currentAmmo;
             weaponSize = currentGun.bigGun;
+
+
+
         }
         else
         if (currentGun == null)
@@ -125,12 +130,38 @@ public class playerAttack : MonoBehaviour
         if (isReloading == true)
         {
 
+            Debug.Log(myCurrentMaxAmmo);
             yield return new WaitForSeconds(myReloadTime + 0.7f);
 
-            currentGun.currentAmmo = currentGun.maxAmmoCapacity;
-            myCurrentAmmo = myMaxAmmo;
+                
+                var newNum = myMaxAmmo - myCurrentAmmo;
 
-            isReloading = false;
+            if (myCurrentAmmo + myCurrentMaxAmmo >= myMaxAmmo)
+            {
+                myCurrentAmmo = myMaxAmmo;
+            }
+            else
+            {
+                myCurrentAmmo += myCurrentMaxAmmo;
+            }
+
+
+                currentGun.currentAmmo = myCurrentAmmo;
+                Debug.Log(newNum);
+
+                myCurrentMaxAmmo = myCurrentMaxAmmo - newNum;
+
+                if (myCurrentMaxAmmo >= 0) { currentGun.currentMaxAmmo = myCurrentMaxAmmo; }
+                else
+                { currentGun.currentMaxAmmo = 0; }
+
+
+                Debug.Log("Current Max Ammo is: " + myCurrentMaxAmmo.ToString());
+
+                isReloading = false;
+
+            
+
         }
 
     }
@@ -142,7 +173,7 @@ public class playerAttack : MonoBehaviour
 
         if (currentGun != null)
         {
-            ammoCounter.text = myCurrentAmmo.ToString() + " / " + currentGun.maxAmmoCapacity.ToString();
+            ammoCounter.text = myCurrentAmmo.ToString() + " / " + currentGun.currentMaxAmmo.ToString();
         }
 
         // This is for shooting
@@ -164,7 +195,7 @@ public class playerAttack : MonoBehaviour
         }
 
         // this is for reloading
-        if (canReload == true && Input.GetButtonDown("Reload") && myCurrentAmmo < myMaxAmmo)
+        if (canReload == true && Input.GetButtonDown("Reload") &&  myCurrentMaxAmmo != 0)
         {
             isReloading = true;
             StartCoroutine(Reload());
@@ -175,47 +206,52 @@ public class playerAttack : MonoBehaviour
 
 
         // This will be to switch weapons
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if (isReloading == false)
         {
-            weaponHolder.selectedWep = 0;
-            weaponHolder.SelectCurrentWeapon();
-        }
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                weaponHolder.selectedWep = 0;
+                weaponHolder.SelectCurrentWeapon();
+            }
 
-        // This will be to switch weapons
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            weaponHolder.selectedWep = 1;
-            weaponHolder.SelectCurrentWeapon();
-        }
+            // This will be to switch weapons
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                weaponHolder.selectedWep = 1;
+                weaponHolder.SelectCurrentWeapon();
+            }
 
-        // This will be to switch weapons
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            weaponHolder.selectedWep = 2;
-            weaponHolder.SelectCurrentWeapon();
-        }
-
-
-        // This will be to switch weapons
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            weaponHolder.selectedWep = 3;
-            weaponHolder.SelectCurrentWeapon();
-        }
+            // This will be to switch weapons
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                weaponHolder.selectedWep = 2;
+                weaponHolder.SelectCurrentWeapon();
+            }
 
 
-        if (myMovement.cakeHeld == true)
-        {
+            // This will be to switch weapons
+            if (Input.GetKeyDown(KeyCode.Alpha4))
+            {
+                weaponHolder.selectedWep = 3;
+                weaponHolder.SelectCurrentWeapon();
+            }
 
-            weaponHolder.selectedWep = 3;
-            weaponHolder.SelectCurrentWeapon();
-            canReload = false;
 
-        }
-        else
-        {
-            canReload = true;
-        }
+            if (myMovement.cakeHeld == true)
+            {
+
+                weaponHolder.selectedWep = 3;
+                weaponHolder.SelectCurrentWeapon();
+                canReload = false;
+
+            }
+            else
+            {
+                canReload = true;
+            }
+
+        } // end of is reloading
+
 
     }
 
