@@ -11,6 +11,9 @@ public class cakeMechanics : MonoBehaviour
     public CakeHealthBar cakeHealthBar;
     public playerAttack playerAtt;
 
+    // this is the rigidbody that gives the cake physics
+    public Rigidbody rb;
+
     // this int is the cake health points. This is a different variable than playerHealth
     float maxCakeHealth = 100;
     //Cake's current health points
@@ -19,8 +22,6 @@ public class cakeMechanics : MonoBehaviour
     // this boolean will help us keep track of weather the cake is on the ground or not/
     bool ground = true;
 
-    // this allows us to display the variable cakeHealth on UI
-    //[SerializeField] Text cakeHealthCounter;
 
     void Start()
     {
@@ -28,31 +29,38 @@ public class cakeMechanics : MonoBehaviour
         cakeHealthBar.SetMaxCakeHealth(maxCakeHealth);
         myCake = this.transform;
 
+        rb = GetComponent<Rigidbody>();
+
     }
 
     // this event is triggered whenever the cake collider collides with another collider
     void OnCollisionEnter(Collision collisioninfo)
     {
-
+        // handles player collision
         if (collisioninfo.collider.tag == "Player")
         {
+            // this code allows for cake pick-up
             myCake.position = cakeHolder.position;
             myCake.parent = cakeHolder;
 
+            // this code helps to set the position of the cake on the player hand after pick-up
             myCake.transform.localRotation = Quaternion.Euler(0, 0, 0);
             cakeHolder.transform.localRotation = Quaternion.Euler(0, 0, 105);
             
+            // change cake ground status after pick-up
             ground = false;
-            Debug.Log("The Cake is Held!!");
+            //Debug.Log("The Cake is Held!!");
+
+            // this method will disable cake physics
+            DisablePhysics();
 
         }
 
+        // handles zombie collision
         if (collisioninfo.collider.tag == "Zombie")
         {
             TakeDamage(10);
         }
-
-
     }
 
     void TakeDamage(float damage)
@@ -67,12 +75,24 @@ public class cakeMechanics : MonoBehaviour
         cakeHealthBar.SetCakeHealth(currentCakeHealth);
     }
 
+    // enables cake physics
+    void EnablePhysics()
+    {
+        rb.isKinematic = false;
+        rb.detectCollisions = true;
+    }
+
+    // disables cake physics
+    void DisablePhysics()
+    {
+        rb.isKinematic = true;
+        rb.detectCollisions = false;
+    }
+
 
     // Update is called once per frame
     private void Update()
     {
-        // this changes the variable playerHealthCounter with the updated cake health every frame
-        //cakeHealthCounter.text = "Cake Hp: " + health;
 
         // this method will trigger game over when cake health drops to 0
         if (currentCakeHealth <= 0)
@@ -86,6 +106,19 @@ public class cakeMechanics : MonoBehaviour
             GroundDamage(1);
             //Debug.Log(cakeHealthBar);
 
+        }
+
+        // handles dropping the cake
+        if (ground == false && Input.GetKeyDown(KeyCode.E))
+        {
+            // this code will allow for the cake to be dropped by the player
+            myCake.parent = null;
+
+            // change cake ground status after dropping it
+            ground = true;
+
+            // this method will enable the cake physics so that it can fall to the ground
+            EnablePhysics();
         }
 
     }
