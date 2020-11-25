@@ -3201,14 +3201,11 @@ MonoBehaviour:
   m_text: 'Shoot --
 
 
-    Primary --
-
-    Weapon
+    Weapons--
 
 
-    Secondary --
 
-    Weapon'
+    Drop Cake--'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -34897,7 +34894,10 @@ MonoBehaviour:
     Space
 
 
-    Shift'
+    Shift
+
+
+    R'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -81247,7 +81247,10 @@ MonoBehaviour:
     Jump --
 
 
-    Sprint --'
+    Sprint --
+
+
+    Reload -- '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
@@ -82185,11 +82188,12 @@ MonoBehaviour:
   m_text: 'Left Click
 
 
-    Num Key 1
+    Num Keys
+
+    1-4
 
 
-
-    Num Key 2'
+    E'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
   m_sharedMaterial: {fileID: 2164040, guid: 5302535af1044152a457ed104f1f4b91, type: 2}
