@@ -11,7 +11,8 @@ public class destroyCorpse : MonoBehaviour
     void Start()
     {
         myAnimator = GetComponent<Animator>();
-        myGameController = GameObject.FindGameObjectWithTag("Game Controller").GetComponent<gameController>();
+        GameObject thisGameController = GameObject.FindGameObjectWithTag("Game Controller");
+        myGameController = thisGameController.GetComponent<gameController>();
     }
 
     // Update is called once per frame
@@ -19,7 +20,7 @@ public class destroyCorpse : MonoBehaviour
     {
         if (myAnimator.GetCurrentAnimatorStateInfo(0).IsTag("Destroy"))
         {
-            myGameController.currentZombieCount--;
+            myGameController.currentZombieCount -= 1;
             Destroy(gameObject);
             Destroy(this);
             Debug.Log("Corpse Destroyed Successfully");
