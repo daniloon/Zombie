@@ -4,16 +4,16 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 0
+  m_CurrentQuality: 2
   m_QualitySettings:
   - serializedVersion: 2
     name: Low
     pixelLightCount: 0
-    shadows: 0
-    shadowResolution: 0
+    shadows: 2
+    shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 20
+    shadowDistance: 50
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
@@ -45,11 +45,11 @@ QualitySettings:
   - serializedVersion: 2
     name: Medium
     pixelLightCount: 1
-    shadows: 1
-    shadowResolution: 0
+    shadows: 2
+    shadowResolution: 1
     shadowProjection: 1
     shadowCascades: 1
-    shadowDistance: 20
+    shadowDistance: 100
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
@@ -82,21 +82,21 @@ QualitySettings:
     name: High
     pixelLightCount: 2
     shadows: 2
-    shadowResolution: 1
-    shadowProjection: 1
-    shadowCascades: 2
-    shadowDistance: 40
+    shadowResolution: 2
+    shadowProjection: 0
+    shadowCascades: 1
+    shadowDistance: 150
     shadowNearPlaneOffset: 3
     shadowCascade2Split: 0.33333334
     shadowCascade4Split: {x: 0.06666667, y: 0.2, z: 0.46666667}
-    shadowmaskMode: 1
+    shadowmaskMode: 0
     skinWeights: 2
     textureQuality: 0
-    anisotropicTextures: 1
+    anisotropicTextures: 0
     antiAliasing: 0
     softParticles: 0
     softVegetation: 1
-    realtimeReflectionProbes: 1
+    realtimeReflectionProbes: 0
     billboardsFaceCameraPosition: 1
     vSyncCount: 1
     lodBias: 1
@@ -122,7 +122,7 @@ QualitySettings:
     PS4: 2
     PSP2: 1
     Stadia: 2
-    Standalone: 0
+    Standalone: 1
     WebGL: 2
     Windows Store Apps: 2
     XboxOne: 2
