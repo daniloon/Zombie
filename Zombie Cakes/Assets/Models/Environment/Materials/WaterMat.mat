@@ -61,30 +61,32 @@ Material:
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5
-    - _Depth: 0.34
+    - _Depth: 0.26
+    - _Displacement: 0.5
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Metallic: 0
+    - _NormalStrength: 0.103
     - _OcclusionStrength: 1
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Smoothness: 0.5
+    - _Smoothness: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
-    - _Strength: 1.4
+    - _Strength: 0.34
     - _Surface: 0
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _DeepColor: {r: 0.15263441, g: 0.535748, b: 0.6603774, a: 0.65882355}
+    - _DeepColor: {r: 0.0029814949, g: 0.59316355, b: 0.6320754, a: 0.65882355}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _ShallowColor: {r: 0.3693485, g: 0.8756093, b: 0.9433962, a: 0.4392157}
+    - _ShallowColor: {r: 0, g: 0.7461276, b: 1, a: 0.4392157}
     - _SpecColor: {r: 0.2, g: 0.2, b: 0.2, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &2019746685919408146
