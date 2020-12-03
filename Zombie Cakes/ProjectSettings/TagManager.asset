@@ -9,6 +9,7 @@ TagManager:
   - CakeHolder
   - AmmoBox
   - DropOffZone
+  - Game Controller
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - 
   - 
   - Ground
-  - 
+  - Collision
   - 
   - 
   - 
