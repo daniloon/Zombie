@@ -14,11 +14,11 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.7168921, g: 0.8017488, b: 0.8490566, a: 0.078431375}
+  m_Fog: 1
+  m_FogColor: {r: 0.6391955, g: 0.6849628, b: 0.7169812, a: 0.25490198}
   m_FogMode: 3
-  m_FogDensity: 0.00075
-  m_LinearFogStart: 0
+  m_FogDensity: 0.0015
+  m_LinearFogStart: 1.17
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.012983031, g: 0.23455065, b: 0.5583406, a: 1}
   m_AmbientEquatorColor: {r: 0.2747864, g: 0.49260524, b: 0.6132076, a: 1}
@@ -27,7 +27,7 @@ RenderSettings:
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.31198823, g: 0.375879, b: 0.5377358, a: 1}
   m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
-  m_HaloStrength: 0.374
+  m_HaloStrength: 0.282
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
   m_HaloTexture: {fileID: 0}
@@ -9134,7 +9134,7 @@ Terrain:
   serializedVersion: 6
   m_TerrainData: {fileID: 15600000, guid: d0cf464598efa453cbe0be519832c1cc, type: 2}
   m_TreeDistance: 600
-  m_TreeBillboardDistance: 150
+  m_TreeBillboardDistance: 100
   m_TreeCrossFadeLength: 50
   m_TreeMaximumFullLODCount: 75
   m_DetailObjectDistance: 150
@@ -9147,7 +9147,7 @@ Terrain:
   m_DrawInstanced: 0
   m_DrawTreesAndFoliage: 1
   m_ReflectionProbeUsage: 1
-  m_MaterialTemplate: {fileID: 2100000, guid: abac24e2f731241d98815e6de084ca8d, type: 2}
+  m_MaterialTemplate: {fileID: 2100000, guid: d1bbb3261a9134c7fa460990b3cd156f, type: 2}
   m_BakeLightProbesForTrees: 1
   m_PreserveTreePrototypeLayers: 0
   m_DeringLightProbesForTrees: 1
