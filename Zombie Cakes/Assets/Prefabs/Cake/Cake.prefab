@@ -704,6 +704,7 @@ MonoBehaviour:
   cakeHolder: {fileID: 0}
   cakeHealthBar: {fileID: 0}
   playerAtt: {fileID: 0}
+  playerMove: {fileID: 0}
   rb: {fileID: 0}
 --- !u!65 &1910143434762093271
 BoxCollider:
@@ -716,8 +717,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 0.5510926, z: 1}
+  m_Center: {x: 0, y: 0.2244537, z: 0}
 --- !u!54 &7433578691484087872
 Rigidbody:
   m_ObjectHideFlags: 0

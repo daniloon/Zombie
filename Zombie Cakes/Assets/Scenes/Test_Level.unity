@@ -7220,7 +7220,7 @@ GameObject:
   - component: {fileID: 813011117}
   m_Layer: 5
   m_Name: UICanvas
-  m_TagString: Untagged
+  m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12776,6 +12776,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cakePrefab: {fileID: 1910143434762093275, guid: 3c1809dc1c2e94bf68abc860707de1ca, type: 3}
+  thisCake: {fileID: 0}
   randomNumber: 0
 --- !u!1001 &1358642984
 PrefabInstance:
@@ -12889,6 +12890,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cakePrefab: {fileID: 1910143434762093275, guid: 3c1809dc1c2e94bf68abc860707de1ca, type: 3}
+  thisCake: {fileID: 0}
   randomNumber: 0
 --- !u!65 &1364130858
 BoxCollider:
@@ -18583,6 +18585,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cakePrefab: {fileID: 1910143434762093275, guid: 3c1809dc1c2e94bf68abc860707de1ca, type: 3}
+  thisCake: {fileID: 0}
   randomNumber: 0
 --- !u!65 &1902491181
 BoxCollider:
