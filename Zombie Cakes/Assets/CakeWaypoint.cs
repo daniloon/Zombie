@@ -7,7 +7,7 @@ public class CakeWaypoint : MonoBehaviour
 {
     public Image wayImg;
     public Text distanceText;
-
+    private Vector3 scaleChange, positionChange;
     public Transform player;
     public Transform target;
     public Camera cam;
@@ -22,6 +22,8 @@ public class CakeWaypoint : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        wayImg.transform.localScale += scaleChange;
+        wayImg.transform.position += positionChange;
         if (target != null)
         {
             GetDistance();

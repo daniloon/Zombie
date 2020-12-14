@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 
@@ -10,7 +11,7 @@ public class MenuReturn : MonoBehaviour
     {
         GetComponent<Animation>();
         SceneManager.LoadScene(0);
-
+        Time.timeScale = 1f;
     }
 }
 

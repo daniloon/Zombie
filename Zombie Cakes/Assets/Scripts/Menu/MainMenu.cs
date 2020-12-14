@@ -8,6 +8,11 @@ public class MainMenu : MonoBehaviour
 {
     public GameObject CreditsScreen;
 
+    void Start()
+    {
+        Time.timeScale = 1f;
+    }
+
     public void PlayGame()
     {
         SceneManager.LoadScene(1);
