@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class cakeMechanics : MonoBehaviour
 {
-
+    GameObject thisCake;
     Transform myCake;
     public Transform cakeHolder;
     public CakeHealthBar cakeHealthBar;
@@ -32,6 +32,8 @@ public class cakeMechanics : MonoBehaviour
 
         rb = GetComponent<Rigidbody>();
 
+        thisCake = GameObject.FindGameObjectWithTag("Cake");
+
     }
 
     // this event is triggered whenever the cake collider collides with another collider
@@ -43,7 +45,11 @@ public class cakeMechanics : MonoBehaviour
             // this code allows for cake pick-up
             myCake.position = cakeHolder.position;
             myCake.parent = cakeHolder;
-
+            myCake.gameObject.layer = LayerMask.NameToLayer("Cake");
+            foreach(Transform child in myCake)
+            {
+                child.gameObject.layer = LayerMask.NameToLayer("Cake");
+            }
             // this code sets the rotation of the cake on the player hand after pick-up
             myCake.transform.localRotation = Quaternion.Euler(0, 0, 0);
             cakeHolder.transform.localRotation = Quaternion.Euler(0, 0, 105);
@@ -121,7 +127,7 @@ public class cakeMechanics : MonoBehaviour
             playerMove.cakeHeld = false;
             // change cake ground status after dropping it
             ground = true;
-
+            //myCake.gameObject.layer = LayerMask.NameToLayer("Default");
             // this method will enable the cake physics so that it can fall to the ground
             EnablePhysics();
         }
