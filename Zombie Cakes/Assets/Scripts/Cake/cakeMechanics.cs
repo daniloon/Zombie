@@ -21,7 +21,7 @@ public class cakeMechanics : MonoBehaviour
     float currentCakeHealth;
 
     // this boolean will help us keep track of weather the cake is on the ground or not/
-    bool ground = true;
+    bool ground = false;
 
 
     void Start()
