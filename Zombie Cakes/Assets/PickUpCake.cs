@@ -48,7 +48,7 @@ public class PickUpCake : MonoBehaviour {
 
             } 
             else
-            {
+            if (randomNumber == 3){
 
                 var i = Instantiate(cakePrefab, new Vector3(167, 13 , 127), Quaternion.identity);
                 thisCake = i.GetComponent<cakeMechanics>();
