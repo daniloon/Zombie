@@ -7,9 +7,9 @@ public class gameController : MonoBehaviour
 {
 
     // here are some things to keep track of. This also includes the #'s for zombie count.
-    int maxZombieCount = 15;
+    int maxZombieCount = 50;
     public int currentZombieCount;
-    int spawnInterval = 50;
+    int spawnInterval = 15;
     int tick = 0;
 
     // This is to setup our spawners and what enemy types we have included.
