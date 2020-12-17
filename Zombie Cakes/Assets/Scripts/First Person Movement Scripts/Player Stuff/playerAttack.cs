@@ -110,11 +110,11 @@ public class playerAttack : MonoBehaviour
 
                     // This is incase we want to do a blood effect or something.
                     
-                    //if (myTarget.impactEffect != null)
-                    //{
-                    //    GameObject zombieHitEffect = Instantiate(myTarget.impactEffect, thisHit.point, Quaternion.LookRotation(thisHit.normal));
-                    //    Destroy(zombieHitEffect, 0.75f);
-                    //}
+                    if (myTarget.impactEffect != null)
+                    {
+                        GameObject zombieHitEffect = Instantiate(myTarget.impactEffect, thisHit.point, Quaternion.LookRotation(thisHit.normal));
+                        Destroy(zombieHitEffect, 0.75f);
+                    }
 
                 } // end of if else if statement.
 
@@ -169,7 +169,7 @@ public class playerAttack : MonoBehaviour
     private void Update()
     {
 
-        // this is to display the current bullets in the UI
+        //this is to display the current bullets in the UI
 
         if (currentGun != null)
         {

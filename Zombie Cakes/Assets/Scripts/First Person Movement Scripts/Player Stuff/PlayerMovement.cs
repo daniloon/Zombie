@@ -74,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     {
         MyInput();
         Look();
+
     }
 
     /// Find user input

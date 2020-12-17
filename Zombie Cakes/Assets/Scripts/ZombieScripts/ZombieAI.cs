@@ -16,19 +16,22 @@ public class ZombieAI : MonoBehaviour
 
     // AI setup
     NavMeshAgent navAgent;
-    GameObject myTarget;
+    Transform myTarget;
     public GameObject myCorpse;
     Animator zombieAnimator;
+    public GameObject impactEffect;
 
     int tick = 0;
+    int updateTick = 0;
 
+    public Vector3 targetPosition;
 
     // Start is called before the first frame update
     void Start()
     {
 
         navAgent = GetComponent<NavMeshAgent>();
-        myTarget = GameObject.FindGameObjectWithTag("Player");
+        myTarget = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
 
         zombieAnimator = this.GetComponent<Animator>();
 
@@ -64,11 +67,17 @@ public class ZombieAI : MonoBehaviour
     void Update()
     {
 
+
+
         //if the zombie can move, then we make it move.
         if (canMove == true)
         {
-            navAgent.SetDestination(myTarget.transform.position);
+
+                navAgent.SetDestination(myTarget.position);
+
+            
         }
+
 
 
 
