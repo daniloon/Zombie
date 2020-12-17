@@ -22,6 +22,13 @@ public class CakeWaypoint : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+        if (target == null)
+        {
+            target = GameObject.FindGameObjectWithTag("Cake").GetComponent<Transform>();
+        }
+        
+
         wayImg.transform.localScale += scaleChange;
         wayImg.transform.position += positionChange;
         if (target != null)
