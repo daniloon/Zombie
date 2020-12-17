@@ -36,7 +36,7 @@ public class PickUpCake : MonoBehaviour {
             if (randomNumber == 1)
             {
 
-                var i = Instantiate(cakePrefab, new Vector3(1035, 13, 94), Quaternion.identity);
+                var i = Instantiate(cakePrefab, new Vector3(1040.34f, -83.50644f, 93.21001f), Quaternion.identity);
                 thisCake = i.GetComponent<cakeMechanics>();
 
                 thisCake.cakeHolder = GameObject.Find("LeftCakeHolder").GetComponent<Transform>();
@@ -48,7 +48,7 @@ public class PickUpCake : MonoBehaviour {
             else if (randomNumber == 2)
             {
 
-                var i = Instantiate(cakePrefab, new Vector3(1234, 13, 998), Quaternion.identity);
+                var i = Instantiate(cakePrefab, new Vector3(1238.81f, -83.64644f, 997.328f), Quaternion.identity);
                 thisCake = i.GetComponent<cakeMechanics>();
 
                 thisCake.cakeHolder = GameObject.Find("LeftCakeHolder").GetComponent<Transform>();
@@ -60,7 +60,7 @@ public class PickUpCake : MonoBehaviour {
             else
             if (randomNumber == 3){
 
-                var i = Instantiate(cakePrefab, new Vector3(167, 13 , 127), Quaternion.identity);
+                var i = Instantiate(cakePrefab, new Vector3(172.0261f, -83.64644f, 126.6947f), Quaternion.identity);
                 thisCake = i.GetComponent<cakeMechanics>();
 
                 thisCake.cakeHolder = GameObject.Find("LeftCakeHolder").GetComponent<Transform>();

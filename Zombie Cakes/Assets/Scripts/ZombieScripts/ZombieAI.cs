@@ -35,6 +35,8 @@ public class ZombieAI : MonoBehaviour
 
         zombieAnimator = this.GetComponent<Animator>();
 
+      
+
     }
 
     public void TakeDamage(float damageAmount)
@@ -59,6 +61,19 @@ public class ZombieAI : MonoBehaviour
 
         Instantiate(myCorpse, this.transform.position, this.transform.rotation);
         Destroy(gameObject);
+
+    }
+
+    
+
+    private void OnCollisionEnter(Collision other)
+    {
+
+        if (other.gameObject.tag == "Building")
+        {
+            Destroy(gameObject);
+
+        }
 
     }
 

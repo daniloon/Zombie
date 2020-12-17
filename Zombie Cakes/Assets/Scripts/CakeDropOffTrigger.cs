@@ -16,7 +16,12 @@ public class CakeDropOffTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (theCake == null)
+        {
+            theCake = GameObject.FindGameObjectWithTag("Cake");
+        }
+
     }
 
     private void OnTriggerEnter(Collider other)

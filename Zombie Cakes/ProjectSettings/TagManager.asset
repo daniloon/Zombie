@@ -11,6 +11,7 @@ TagManager:
   - DropOffZone
   - Game Controller
   - UI
+  - Building
   layers:
   - Default
   - TransparentFX
