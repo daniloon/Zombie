@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PickUpCake : MonoBehaviour { 
@@ -7,6 +8,7 @@ public class PickUpCake : MonoBehaviour {
     public GameObject cakePrefab;
     public cakeMechanics thisCake;
     public int randomNumber;
+    public int cakeCounter;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,14 @@ public class PickUpCake : MonoBehaviour {
         // handles the event of the cake having been delivered
         if (GameObject.FindGameObjectWithTag("Cake") == null)
         {
+            cakeCounter++;
+
+            // after the player has dropped off 3 cakes > Player wins!
+            if (cakeCounter == 4) {
+                SceneManager.LoadScene(3);
+            }
+
+
             // decide on store to spawn cake (random number between 1 and 3)
             randomNumber = Random.Range(1, 4);
 
